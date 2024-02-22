@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 Theme Name: Potenza v 1.0
 Theme URI: http://www.ansonika.com/ponteza/
@@ -1722,4 +1723,15 @@ body[dir=rtl] .fl-form.fl-style-2 label.fl-label {
 body[dir=rtl] .fl-form .fl-wrap-select:after {
   right: unset;
   left: 6px;
+=======
+/* app/static/css/style.css */
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+>>>>>>> master
 }
