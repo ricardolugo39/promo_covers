@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+</head>
+<body>
+    <h1>User Data</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user_row in user_data %}
+                <tr>
+                    <td>{{ user_row[0] }}</td>
+                    <td>{{ user_row[1] }}</td>
+                    <td>{{ user_row[2] }}</td>
+                    <td>{{ user_row[3] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h1>Order Data</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Order Info</th>
+                <th>Color</th>
+                <th>Size</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order_row in order_data %}
+                <tr>
+                    <td>{{ order_row[0] }}</td>
+                    <td>{{ order_row[1] }}</td>
+                    <td>{{ order_row[2] }}</td>
+                    <td>{{ order_row[3] }}</td>
+                    <td>{{ order_row[4] }}</td>
+                    <td>{{ order_row[5] }}</td>
+                    <td>{{ order_row[6] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <h1>Shipping</h1>
+
+    <form action="#" method="post">
+        <label for="orderInfo">Order Info:</label>
+        <input type="text" id="orderInfo" name="orderInfo" required>
+        <br>
+
+        <label for="trackingNumber">Tracking Number:</label>
+        <input type="text" id="trackingNumber" name="trackingNumber" required>
+        <br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    
+
+
+    
+</body>
+</html>
