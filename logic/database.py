@@ -16,7 +16,8 @@ def init_database():
         CREATE TABLE IF NOT EXISTS user_data (
             id INTEGER PRIMARY KEY,
             name TEXT NOT NULL,
-            email TEXT NOT NULL
+            email TEXT NOT NULL,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     ''')
 
@@ -28,7 +29,8 @@ def init_database():
             email TEXT NOT NULL,
             order_info TEXT NOT NULL,
             color TEXT NOT NULL,
-            size TEXT NOT NULL
+            size TEXT NOT NULL,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     ''')
 
@@ -52,7 +54,7 @@ def store_order_data(name, email, order, color, size):
     cursor = conn.cursor()
 
     # Log extracted form data for debugging
-    print(f"Storing data: name={name}, email={email}, order={order}, color={color}, size={size}")
+    # print(f"Storing data: name={name}, email={email}, order={order}, color={color}, size={size}")
 
     # Construct and log the SQL statement
     sql = f"""

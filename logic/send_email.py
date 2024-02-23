@@ -106,4 +106,4 @@ def send_confirmation_email(name, email, order, color, size):
         server.sendmail(SENDER_EMAIL,RECIPIENT_EMAIL,recipient_message.as_string())
 
 # Example usage:
-send_confirmation_email('John Doe', 'ricardolugo39@me.com', 'Cleat', 'Red', '10')
+# send_confirmation_email('John Doe', 'ricardolugo39@me.com', 'Cleat', 'Red', '10')
