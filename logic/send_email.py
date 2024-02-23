@@ -33,7 +33,7 @@ def send_interest_email(name, email):
     # html_content = html_content.replace('{new_form_link}', new_form_link)
 
     # Generate the link with query parameters
-    order_confirmation_link = f'http://127.0.0.1:5000/order_confirmation?name={name}&email={email}'
+    order_confirmation_link = f'http://127.0.0.1:5000/free_pair?name={name}&email={email}'
 
     # Include the link in the email content
     html_content = html_content.replace('{order_confirmation_link}', order_confirmation_link)
@@ -147,4 +147,4 @@ def send_shipping_email(email, order, tracking):
         server.sendmail(SENDER_EMAIL,RECIPIENT_EMAIL,recipient_message.as_string())
 
 # Example usage:
-send_shipping_email('ricardolugo39@me.com', '12345', '1234567890')
+# send_interest_email('rick','ricardolugo39@me.com')
