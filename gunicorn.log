@@ -1,0 +1,17 @@
+[2024-02-22 19:44:47 +0000] [27025] [INFO] Starting gunicorn 21.2.0
+[2024-02-22 19:44:47 +0000] [27025] [INFO] Listening at: http://0.0.0.0:5000 (27025)
+[2024-02-22 19:44:47 +0000] [27025] [INFO] Using worker: sync
+[2024-02-22 19:44:47 +0000] [27026] [INFO] Booting worker with pid: 27026
+[2024-02-22 19:44:47 +0000] [27027] [INFO] Booting worker with pid: 27027
+[2024-02-22 19:44:48 +0000] [27028] [INFO] Booting worker with pid: 27028
+[2024-02-22 19:44:48 +0000] [27029] [INFO] Booting worker with pid: 27029
+[2024-02-22 22:02:29 +0000] [27025] [INFO] Handling signal: term
+[2024-02-22 22:02:29 +0000] [27026] [INFO] Worker exiting (pid: 27026)
+[2024-02-22 22:02:29 +0000] [27027] [INFO] Worker exiting (pid: 27027)
+[2024-02-22 22:02:29 +0000] [27028] [INFO] Worker exiting (pid: 27028)
+[2024-02-22 22:02:29 +0000] [27029] [INFO] Worker exiting (pid: 27029)
+[2024-02-22 22:02:29 +0000] [27025] [ERROR] Worker (pid:27026) was sent SIGTERM!
+[2024-02-22 22:02:29 +0000] [27025] [ERROR] Worker (pid:27027) was sent SIGTERM!
+[2024-02-22 22:02:29 +0000] [27025] [ERROR] Worker (pid:27028) was sent SIGTERM!
+[2024-02-22 22:02:29 +0000] [27025] [ERROR] Worker (pid:27029) was sent SIGTERM!
+[2024-02-22 22:02:29 +0000] [27025] [INFO] Shutting down: Master
