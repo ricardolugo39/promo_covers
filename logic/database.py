@@ -68,3 +68,23 @@ def store_order_data(name, email, order, color, size):
 
     conn.commit()
     conn.close()
+
+def fetch_user_data():
+    conn = sqlite3.connect(DATABASE_PATH)
+    cursor = conn.cursor()
+
+    cursor.execute('SELECT * FROM user_data')
+    user_data = cursor.fetchall()
+
+    conn.close()
+    return user_data
+
+def fetch_order_data():
+    conn = sqlite3.connect(DATABASE_PATH)
+    cursor = conn.cursor()
+
+    cursor.execute('SELECT * FROM order_data')
+    order_data = cursor.fetchall()
+
+    conn.close()
+    return order_data

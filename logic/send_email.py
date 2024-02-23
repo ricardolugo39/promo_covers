@@ -107,3 +107,44 @@ def send_confirmation_email(name, email, order, color, size):
 
 # Example usage:
 # send_confirmation_email('John Doe', 'ricardolugo39@me.com', 'Cleat', 'Red', '10')
+        
+def send_shipping_email(email, order, tracking):
+    subject = 'Shipping Confirmation'
+    body = f"nShipping info for,\n\n\n\nOrder Details:\nOrder: {order}\Tracking: {tracking}"
+
+    # Get the path to the 'email_confirmation.html' file in the 'templates' folder
+    template_path = os.path.join(os.path.dirname(__file__), 'templates', 'email_shipping.html')
+
+    with open(template_path, 'r') as file:
+        html_content = file.read()
+
+    # Replace placeholders in the HTML content with actual values
+    # html_content = html_content.replace('{name}', name)
+    html_content = html_content.replace('{email}', email)
+    html_content = html_content.replace('{order}', order)
+    html_content = html_content.replace('{tracking}', tracking)
+
+    # Create customer email message
+    message = MIMEMultipart()
+    message['From'] = SENDER_EMAIL
+    message['To'] = email
+    message['Subject'] = subject
+    message.attach(MIMEText(html_content, 'html'))
+    
+    # internal email
+    recipient_subject = 'Shipping Internal'
+    recipient_message = MIMEMultipart()
+    recipient_message['From'] = SENDER_EMAIL
+    recipient_message['To'] = RECIPIENT_EMAIL
+    recipient_message['Subject'] = recipient_subject
+    recipient_message.attach(MIMEText(body, 'plain'))
+
+    # Send the email
+    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+        server.starttls()
+        server.login(SMTP_USERNAME, SMTP_PASSWORD)
+        server.sendmail(SENDER_EMAIL, email, message.as_string())
+        server.sendmail(SENDER_EMAIL,RECIPIENT_EMAIL,recipient_message.as_string())
+
+# Example usage:
+send_shipping_email('ricardolugo39@me.com', '12345', '1234567890')
