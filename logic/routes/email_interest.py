@@ -5,4 +5,4 @@ email_interest = Blueprint('email_interest', __name__)
 
 @bp.route('/email_interest', methods=['GET', 'POST'])
 def display_order_confirmation():
-    return render_template('email_interest.html', template_folder=current_app.template_folder)
+    return render_template('temp_page.html', template_folder=current_app.template_folder)
