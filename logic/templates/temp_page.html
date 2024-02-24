@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -68,47 +68,8 @@
 	                   
 	                </div>
 	                <!-- /top-wizard -->
-					<form id="wrapped" method="post" enctype="multipart/form-data" action="{{ url_for('main_app.landing_page') }}">
-
-
-	                    <input id="website" name="website" type="text" value="">
-	                    <!-- Leave for security protection, read docs for details -->
-	                    <div>
-	                        <div>
-								<div>
-									<h3 class="main_question">Exclusive Offer: Buy a Pair, Get a Pair on Us!</h3>
-								</div>
-	                            <h2 class="section_title">Step 1</h2>
-	                            <p class="main_question">Enter name and email, then continue to Amazon.com to purchase a pair of cleat covers.</p>
-								</div>
-								
-								<div>
-	                            <div class="form-group add_top_30">
-	                                <label for="name">First and Last Name</label>
-	                                <input type="text" name="name" id="name" class="form-control required" onchange="getVals(this, 'name_field');">
-	                            </div>
-	                            <div class="form-group">
-	                                <label for="email">Email Address</label>
-	                                <input type="email" name="email" id="email" class="form-control required" onchange="getVals(this, 'email_field');">
-	                            </div>
-								<div id="bottom-wizard">
-	                        
-									<button type="submit" name="process" class="submit">Submit and Continue to Amazon</button>
-								</div>
-								<div>
-									<h2 class="section_title">Step 2 (Next)</h2>
-									<p class="main_question">Provide order and shipping details. </p>
-									<p class="main_question">After submitting this form you'll receive an email from us with instructions to provide the order number and shipping details.</p>
-									</div>
-	                            
-	                        </div>
-	                        
-
-	                    </div>
-	                    <!-- /middle-wizard -->
-	                    
-	                    <!-- /bottom-wizard -->
-	                </form>
+					<p> Thank you for your interest in our Cleat Covers. You will be redirected to our Amazon Store shortly.</p>
+                    <p> </p>
 	            </div>
 	            <!-- /Wizard container -->
 	        </div>
@@ -137,6 +98,13 @@
 
 	<!-- Wizard script-->
 	<!-- <script src="{{ url_for('static', filename='js/func_1.js') }}"></script> -->
+
+     <!-- JavaScript for client-side redirection -->
+     <script>
+        setTimeout(function() {
+            window.location.href = "{{ url_for('main_app.redirect_to_amazon') }}";
+        }, 5000);  // 5-second delay
+    </script>
 
 
 </body>
