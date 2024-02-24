@@ -30,11 +30,10 @@ def init_database():
             order_info TEXT NOT NULL,
             color TEXT NOT NULL,
             size TEXT NOT NULL,
-            country TEXT NOT NULL,
-            street TEXT NOT NULL,
-            apartment TEXT NOT NULL,
+            address TEXT NOT NULL,
+            state TEXT NOT NULL,
             city TEXT NOT NULL,
-            post_code TEXT NOT NULL,
+            zip TEXT NOT NULL,
             timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     ''')
@@ -54,19 +53,20 @@ def store_user_data(name, email):
     conn.commit()
     conn.close()
 
-def store_order_data(name, email, order, color, size, country, street, apartment, city, post_code):
+def store_order_data(name, email, order_info, color, size, address, state, city, zip):
     conn = sqlite3.connect(DATABASE_PATH)
     cursor = conn.cursor()
 
     # Construct and log the SQL statement
     sql = f"""
-        INSERT INTO order_data (name, email, order_info, color, size, country, street, apartment, city, post_code) 
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    INSERT INTO order_data (name, email, order_info, color, size, address, state, city, zip) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     """
-    print(sql)
+
+    
     
     # Execute the SQL statement with the provided values
-    cursor.execute(sql, (name, email, order, color, size, country, street, apartment, city, post_code))
+    cursor.execute(sql, (name, email, order_info, color, size, address, state, city, zip))
 
     conn.commit()
     conn.close()

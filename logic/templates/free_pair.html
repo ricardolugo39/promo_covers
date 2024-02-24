@@ -1,267 +1,190 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+<html lang="en">
+
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HAS10 - Football cleat covers promotion">
+    <meta name="author" content="Ansonika">
+    <title>HAS10 | Football cleat covers promo</title>
 
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="author" content="SemiColonWeb" />
+    <!-- Favicons-->
+    <link rel="shortcut icon" href="img/apple-touch-icon-72x72-precomposed.png" type="image/x-icon">
+    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
 
-	<!-- Stylesheets
-	============================================= -->
+    <!-- GOOGLE WEB FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet">
+
+    <!-- BASE CSS -->
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/vendors.css') }}" rel="stylesheet">
 	
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
+
+    <!-- YOUR CUSTOM CSS -->
+    <link href="{{ url_for('static', filename='css/custom.css') }}" rel="stylesheet">
 	
-	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}" type="text/css" />
-    
-	<!-- Custom Styles -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/dark.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-icons.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/animate.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}" type="text/css" />
-
-	<!-- Bootstrap File Upload CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/bs-filestyle.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/select-boxes.css') }}" type="text/css" />
-
-    <!-- Bootstrap Select CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/bs-select.css') }}" type="text/css" />
-
-    <!-- Date & Time Picker CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/datepicker.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/timepicker.css') }}" type="text/css" />
-
-    <!-- Range Slider CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/ion.rangeslider.css') }}" type="text/css" />
-
-    <!-- Star Rating CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/bs-rating.css') }}" type="text/css" />
-
-    <!-- Bootstrap Switch CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/components/bs-switches.css') }}" type="text/css" />
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}" type="text/css" />
-    
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<!-- MODERNIZR MENU -->
 	
-	
-	
-	<!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700|Poppins:300,400,500,600,700|PT+Serif:400,400i&display=swap" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
-	<link rel="stylesheet" href="style.css" type="text/css" />
-	<link rel="stylesheet" href="css/dark.css" type="text/css" />
-	<link rel="stylesheet" href="css/font-icons.css" type="text/css" />
-	<link rel="stylesheet" href="css/animate.css" type="text/css" />
-	<link rel="stylesheet" href="css/magnific-popup.css" type="text/css" />
-
-	<link rel="stylesheet" href="css/custom.css" type="text/css" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" /> -->
-
-	<!-- Document Title
-	============================================= -->
-	<title>HAS10 CLEAT COVERS PROMOTION</title>
 
 </head>
 
-<body class="stretched">
+<body>
+	
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div><!-- /Preload -->
+	
+	<div id="loader_form">
+		<div data-loader="circle-side-2"></div>
+	</div><!-- /loader_form -->
+	
+	
+	<!-- /menu -->
+	
+	<div class="container-fluid">
+	    <div class="row row-height">
+	        <div class="col-xl-4 col-lg-4 content-left">
+	            <div class="content-left-wrapper">
+	                <a href="https://www.amazon.com/dp/B0CHMVWB1P" id="logo"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="" width="45" height="45"></a>
 
-	<!-- Document Wrapper
-	============================================= -->
-	<div id="wrapper" class="clearfix">
-
-		<!-- Content
-		============================================= -->
-		<section id="content">
-			<div class="content-wrap pt-0 bg-light">
-				<div class="container clearfix">
-
-
-
-					<div class="single-post mw-xs mx-auto">
-
-						<!-- Single Post
-						============================================= -->
-						<div class="entry clearfix">
-
-							<!-- Comment Form
-							============================================= -->
-							<div id="respond">
-
-								<h3>Form <span>Fields</span></h3>
-
-								{% if error_message %}
-        							<p style="color: red;">{{ error_message }}</p>
-    							{% endif %}					
-
-								<form class="mb-0" id="template-contactform" name="template-contactform" action="{{ url_for('main_app.display_free_pair') }}" method="post" enctype="multipart/form-data">
-
-
-
-
-
-									<div class="row">
-
-										<div class="col-12 bottommargin-sm">
-											<label for="template-contactform-name">Name<small class="text-danger">*</small></label>
-											<input type="text" id="template-contactform-name" name="template-contactform-name" value="" class="form-control required" placeholder="Enter your Full Name" />
-										</div>
-
-										<div class="col-12 bottommargin-sm">
-											<label for="template-contactform-email">Email Address<small class="text-danger">*</small></label>
-											<input type="email" name="template-contactform-email" id="template-contactform-email" class="form-control required" value="" placeholder="user@company.com">
-										</div>
-
-										<div class="col-12 bottommargin-sm">
-											<label for="template-contactform-order">Amazon Order #<small class="text-danger">*</small></label>
-											<input type="text" name="template-contactform-order" id="template-contactform-order" class="form-control required" value="" placeholder=" 113-5268832-4829852">
-										</div>
-
-										<div class="col-6 form-group">
-											<label>Country:</label>
-											<select class="form-control required" name="checkout-form-billing-country" id="checkout-form-billing-country">
-												<option value="CA">Canada</option>
-												<option value="MX">Mexico</option>
-												<option value="US" selected='selected'>United States (US)</option>
-											</select>
-										</div>
-										<div class="col-12 form-group">
-											<label>Street Address:</label>
-											<input type="text" name="checkout-form-billing-street" id="checkout-form-billing-street" class="form-control required" value="">
-										</div>
-										<div class="col-12 form-group">
-											<label>Apartment, Suite, Unit etc:</label>
-											<input type="text" name="checkout-form-billing-apartment" id="checkout-form-billing-apartment" class="form-control required" value="">
-										</div>
-										<div class="col-12 form-group">
-											<label>City:</label>
-											<input type="text" name="checkout-form-billing-city" id="checkout-form-billing-city" class="form-control required" value="">
-										</div>
-										<div class="col-12 form-group">
-											<label>Post Code:</label>
-											<input type="text" name="checkout-form-billing-post-code" id="checkout-form-billing-post-code" class="form-control required" value="">
-										</div>
-										<div class="col-12 bottommargin-sm">
-											<label for="template-contactform-color-select">Select Color of your Free Cleat Cover:<small class="text-danger">*</small></label>
-											<select id="template-contactform-color-select" name="template-contactform-color-select" class="form-control required">
-												<option value="" disabled selected>Select One</option>
-												<option value="black">Black</option>
-												<option value="white">White</option>
-												<option value="royal_blue">Royal Blue</option>
-												<option value="red">Red</option>
-												<option value="orange">Orange</option>
-											</select>
-										</div>
-										
-
-										<div class="col-12 bottommargin-sm">
-											<label for="template-contactform-size-select">Select Size of your Free Cleat Cover:<small class="text-danger">*</small></label>
-											<select id="template-contactform-size-select" name="template-contactform-size-select" class="form-control required">
-												<option value="" disabled selected>Select One</option>
-												<option value="youth">Youth</option>
-												<option value="small/medium">Small/Medium</option>
-												<option value="large">Large</option>
-											</select>
-										</div>
-
-										<div class="col-12 d-none">
-											<input type="text" id="template-contactform-botcheck" name="template-contactform-botcheck" value="" />
-										</div>
-										
-										
-										<div class="col-12">
-											<button type="submit" name="template-contactform-submit" class="btn btn-secondary btn-block btn-lg">Send</button>
-										</div>
-
-										<input type="hidden" name="prefix" value="template-contactform-">
-
+	                <div>
+	                    <figure><img src="{{ url_for('static', filename='img/HAS10-football-spats.png') }}" alt="" class="img" width="270" height="270"></figure>
+	                    <h2>Thank you for your purchase</h2>
+	                    <p>Provide the following details to claim your FREE pair cleat covers.</p>
+	                    
+	                    
+	                </div>
+	                <div class="copy">© 2024 HAS10</div>
+	            </div>
+	            <!-- /content-left-wrapper -->
+	        </div>
+	        <!-- /content-left -->
+	        <div class="col-xl-8 col-lg-8 content-right" id="start">
+	            <div id="wizard_container">
+	                <div id="top-wizard">
+	                    <span id="location"></span>
+	                   
+	                </div>
+	                <!-- /top-wizard -->
+	                <form id="wrapped" method="post" action="{{ url_for('main_app.display_free_pair') }}" enctype="multipart/form-data">
+	                    <input id="website" name="website" type="text" value="">
+	                    <!-- Leave for security protection, read docs for details -->
+	                    <div>
+	                        <div>
+								<div>
+								</div>
+	                            <h2 class="section_title">Amazon order number</h2>
+	                            <p class="main_question">You can find the order number on the amazon purchase email or <a href="https://www.amazon.com/gp/css/order-history">click here</a> to view your amazon orders.</p>
+								</div>
+								
+								
+								<div>
+	                            <div class="form-group add_top_30">
+	                                <label for="order">Amazon order number</label>
+	                                <input type="text" name="order_info" id="order_info" class="form-control required" onchange="getVals(this, 'name_field');">
+	                            </div>
+								<div class="form-group add_bottom_30">
+									<h2 class="section_title">Select your FREE cleat covers</h2>
+									<label>Cleat covers</label>
+									<label for="size">size</label>
+									<div class="styled-select clearfix">
+										<select class="form-control required" name="size" id="size">
+											<option value="">Choose a size</option>
+											<option value="Youth">Youth</option>
+											<option value="Small/Medium">Small/Medium</option>
+											<option value="Large">Large</option>
+										</select>
 									</div>
+								</div>
+								<div class="form-group add_bottom_30">
+									<label>Cleat covers</label>
+									<label for="color">color</label>
+									<div class="styled-select clearfix">
+										<select class="form-control required" name="color" id="color">
+											<option value="">Choose a color</option>
+											<option value="Black">Black</option>
+											<option value="White">White</option>
+											<option value="Orange">Orange</option>
+											<option value="Red">Red</option>
+											<option value="Royal Blue">Royal Blue</option>
+										</select>
+									</div>
+								</div>
+	                            
+								<div class="form-group">
+									<h2 class="section_title">Shipping information</h2>
+	                                <label for="name">Full name</label>
+	                                <input type="name" name="name" id="name" class="form-control required" onchange="getVals(this, 'name_field');">
+	                            </div>
 
-								</form>
+								<div class="form-group">
+									<label for="email">Email</label>
+									<input type="email" name="email" id="email" class="form-control required" onchange="getVals(this, 'email_field');">
+								</div>
+								
+								
+								<div class="form-group">
+	                                <label for="address">Address</label>
+	                                <input type="address" name="address" id="address" class="form-control required" onchange="getVals(this, 'address_field');">
+	                            </div>
+								<div class="form-group">
+	                                <label for="city">City</label>
+	                                <input type="city" name="city" id="city" class="form-control required" onchange="getVals(this, 'city_field');">
+	                            </div>
+								<div class="form-group">
+	                                <label for="state">State</label>
+	                                <input type="state" name="state" id="state" class="form-control required" onchange="getVals(this, 'state_field');">
+	                            </div>
+								<div class="form-group">
+	                                <label for="zip">Zip code</label>
+	                                <input type="zip" name="zip" id="zip" class="form-control required" onchange="getVals(this, 'zip_field');">
+	                            </div>
+								
+								<div id="bottom-wizard">
+	                        
+									<button type="submit" name="process" class="submit">Submit</button>
+								</div>
+				
+	                            
+	                        </div>
+	                        
 
+	                    </div>
+	                    <!-- /middle-wizard -->
+	                    
+	                    <!-- /bottom-wizard -->
+	                </form>
+	            </div>
+	            <!-- /Wizard container -->
+	        </div>
+	        <!-- /content-right-->
+	    </div>
+	    <!-- /row-->
+	</div>
+	<!-- /container-fluid -->
 
-							</div><!-- #respond end -->
+	<div class="cd-overlay-nav">
+		<span></span>
+	</div>
+	<!-- /cd-overlay-nav -->
 
-						</div><!-- #comments end -->
-
-					</div>
-
-				</div>
-			</div>
-		</section><!-- #content end -->
-
-	</div><!-- #wrapper end -->
-
-	<!-- Go To Top
-	============================================= -->
-	<div id="gotoTop" class="icon-angle-up"></div>
-
-	<!-- JavaScripts
-	============================================= -->
-
-	<!-- JavaScripts ============================================= -->
-	<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/plugins.min.js') }}"></script>
-
-	<!-- Bootstrap File Upload Plugin -->
-	<script src="{{ url_for('static', filename='js/components/bs-filestyle.js') }}"></script>
-
-	<!-- Select-Boxes Plugin -->
-	<script src="{{ url_for('static', filename='js/components/select-boxes.js') }}"></script>
-
-	<!-- Bootstrap Select Plugin -->
-	<script src="{{ url_for('static', filename='js/components/bs-select.js') }}"></script>
-
-	<!-- Date & Time Picker JS -->
-	<script src="{{ url_for('static', filename='js/components/moment.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/components/datepicker.js') }}"></script>
-	<script src="{{ url_for('static', filename='js/components/timepicker.js') }}"></script>
-
-	<!-- Include Date Range Picker -->
-	<script src="{{ url_for('static', filename='js/components/daterangepicker.js') }}"></script>
-
-	<!-- Range Slider Plugin -->
-	<script src="{{ url_for('static', filename='js/components/rangeslider.min.js') }}"></script>
-
-	<!-- Star Rating Plugin -->
-	<script src="{{ url_for('static', filename='js/components/star-rating.js') }}"></script>
-
-	<!-- Select-Splitter Plugin -->
-	<script src="{{ url_for('static', filename='js/components/selectsplitter.js') }}"></script>
-
-	<!-- TinyMCE Plugin -->
-	<script src="{{ url_for('static', filename='js/components/tinymce/tinymce.min.js') }}"></script>
-
-	<!-- Footer Scripts ============================================= -->
-	<script src="{{ url_for('static', filename='js/functions.js') }}"></script>
+	<div class="cd-overlay-content">
+		<span></span>
+	</div>
+	<!-- /cd-overlay-content -->
 
 	
-	<script>
-		document.addEventListener('DOMContentLoaded', function () {
-			document.getElementById('template-contactform').addEventListener('submit', function (event) {
-				if (!validateForm()) {
-					event.preventDefault(); // Prevents the default form submission behavior
-				}
-			});
-		});
+	<!-- COMMON SCRIPTS -->
+	<script src="{{ url_for('static', filename='js/jquery-3.7.1.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/common_scripts.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/velocity.min.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/common_functions.js') }}"></script>
+	<script src="{{ url_for('static', filename='js/file-validator.js') }}"></script>
 
-		function validateForm() {
-			var name = document.forms["template-contactform"]["template-contactform-name"].value;
-			var email = document.forms["template-contactform"]["template-contactform-email"].value;
-			var order = document.forms["template-contactform"]["template-contactform-order"].value;
-			var color = document.forms["template-contactform"]["template-contactform-color-select"].value;
-			var size = document.forms["template-contactform"]["template-contactform-size-select"].value;
 
-			if (name === "" || email === "" || order === "" || color === "" || size === "") {
-				alert("Please fill out all required fields");
-				return false; // Prevent form submission
-			}
-
-			// Add more specific validation rules if necessary
-
-			return true; // Allow form submission
-		}
-	</script>
+	<!-- Wizard script-->
+	<!-- <script src="js/func_1.js"></script> -->
 
 </body>
 </html>

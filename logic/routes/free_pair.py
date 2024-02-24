@@ -8,31 +8,30 @@ free_pair_bp = Blueprint('free_pair', __name__)
 def display_free_pair():
     current_app.logger.info('Request Content: %s', request.get_data())
 
-    name_param = request.args.get('name', '')
-    email_param = request.args.get('email', '')
+    # name_param = request.args.get('name', '')
+    # email_param = request.args.get('email', '')
 
     if request.method == 'POST':
         # Handle form submission
-        name = request.form.get('template-contactform-name')
-        email = request.form.get('template-contactform-email')
-        order = request.form.get('template-contactform-order')
-        color = request.form.get('template-contactform-color-select')
-        size = request.form.get('template-contactform-size-select')
-        country = request.form.get('checkout-form-billing-country')
-        street = request.form.get('checkout-form-billing-street')
-        apartment = request.form.get('checkout-form-billing-apartment')
-        city = request.form.get('checkout-form-billing-city')
-        post_code = request.form.get('checkout-form-billing-post-code')
+        name = request.form.get('name')
+        email = request.form.get('email')
+        order_info = request.form.get('order_info')
+        color = request.form.get('color')
+        size = request.form.get('size')
+        address = request.form.get('address')
+        state = request.form.get('state')
+        city = request.form.get('city')
+        zip = request.form.get('zip')
 
         # Store the form data in the database
-        store_order_data(name, email, order, color, size, country, street, apartment, city, post_code)
+        store_order_data(name, email, order_info, color, size, address, state, city, zip)
 
         # send confirmation email
-        send_confirmation_email(name, email, order, color, size)
+        send_confirmation_email(name, email, order_info, color, size, address, state, city, zip)
 
         # Redirect to the complete order page after processing the form
         return redirect(url_for('complete_order.display_complete_order'))
 
 
     # Render the template for GET requests
-    return render_template('free_pair.html', name_param, email_param=email_param)
+    return render_template('free_pair.html', template_folder=current_app.template_folder)
