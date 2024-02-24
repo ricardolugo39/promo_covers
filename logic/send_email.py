@@ -26,18 +26,11 @@ def send_interest_email(name, email):
     html_content = html_content.replace('{email}', email)
 
     # Generate the link with query parameters
-    # params = urlencode({'name': name, 'email': email})
-    # new_form_link = f'http://127.0.0.1:5000/email_interest?{params}'
-
+    # params = urlencode({'name': name, 'email': email}
     # Include the link in the email content
     # html_content = html_content.replace('{new_form_link}', new_form_link)
 
-    # Generate the link with query parameters
-    order_confirmation_link = f'http://127.0.0.1:5000/free_pair?name={name}&email={email}'
-
     # Include the link in the email content
-    html_content = html_content.replace('{order_confirmation_link}', order_confirmation_link)
-
 
     # Create the user's email message
     user_subject = 'Customer HAS10 interest email'
@@ -66,7 +59,7 @@ def send_interest_email(name, email):
 # Call the function with sample data for testing
 #send_interest_email('John Doe', 'ricardolugo39@me.com')
         
-def send_confirmation_email(name, email, order, color, size):
+def send_confirmation_email(name, email, order, color, size, adress, state, city, zip):
     subject = 'Has10 Cleat Order Confirmation'
     body = f"new customer order from {name},\n\n\n\nOrder Details:\nOrder: {order}\nColor: {color}\nSize: {size}"
 
@@ -82,6 +75,10 @@ def send_confirmation_email(name, email, order, color, size):
     html_content = html_content.replace('{order}', order)
     html_content = html_content.replace('{color}', color)
     html_content = html_content.replace('{size}', size)
+    html_content = html_content.replace('{state}', state)
+    html_content = html_content.replace('{address}', adress)
+    html_content = html_content.replace('{city}', city)
+    html_content = html_content.replace('{zip}', zip)
 
     # Create customer email message
     message = MIMEMultipart()
