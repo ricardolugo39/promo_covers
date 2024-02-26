@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmation of Your Cleat Covers</title>
+    <title>Your Free Cleat Covers Await! 🎉</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,7 +24,7 @@
 
         .celebration-line, .smaller-line {
             height: 2px; /* Thinner lines */
-            background-color: #ffa500; /* Orange color */
+            background-color: #000000; /* Orange color */
             margin-bottom: 10px;
         }
 
@@ -33,18 +33,22 @@
             font-weight: 800; /* Increased font weight for thickness */
             font-size: 28px; /* Increased font size */
             margin-bottom: 10px;
+            text-align: left;
+            margin-left: 50px;
         }
 
         h2 {
             color: #333;
             font-size: 20px;
             margin-bottom: 10px;
+            text-align: left;
+            margin-left:50px;
         }
 
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
+            padding: 10px 80px;
+            background-color: #000000;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
@@ -61,6 +65,13 @@
             margin-bottom: 10px;
             margin-left: 50px; /* Adjusted margin to the left */
             margin-right: 50px;
+        }
+        ul {
+            text-align: left; /* Align paragraphs to the left */
+            margin-bottom: 10px;
+            margin-left: 50px; /* Adjusted margin to the left */
+            margin-right: 50px;
+            line-height: 24px;
         }
          /* Grey list box styling */
          .list-box {
@@ -92,28 +103,29 @@
 </head>
 <body>
     <div class="container">
-        <div class="celebration-line"></div>
         <h1>HAS10</h1>
-        
-        <h2>Order Confirmation!!</h2>
-        <div class="smaller-line"></div>
-        <p>Hey {name},</p>
+        <div class="celebration-line"></div>
 
-        <p>Thank you for providing the necessary information for your complimentary Cleat Covers. We appreciate your prompt response!</p>
-    
-        <!-- Display the collected information -->
-        <p><strong>Confirmation Details:</strong></p>
-        <p><strong>Size:</strong> {size}</p>
-        <p><strong>Color:</strong> {color}</p>
-        <p><strong>Amazon Order #:</strong> {order}</p>
-        
-        <!-- Inform the customer about the shipping process -->
-        <p>As soon as your Amazon order is delivered, we will dispatch your free pair of Cleat Covers. You can expect to receive a shipping confirmation email with tracking information to keep you updated on your package's journey.</p>
 
-        <p>If you have any questions or require further assistance, feel free to reach out by replying to this email.</p>
-        <p>Thank you for choosing our Cleat Covers!</p>
-    
-        <p>Best regards,<br>HAS10</p>
+
+
+        <!-- Check if the customer has already made a purchase -->
+        <h2>Congratulations, Your free cleats are being prepped, and we aim to dispatch them within 24-48 hours.</h2>
+
+        <ul>
+            <li><strong>Size:</strong> {size}</li>
+            <li><strong>Color:</strong> {color}</li>
+            <li><strong>Shipping address:</strong> {address}, {city}, {state} {zip}</li>
+          </ul>
+            <P>Keep an eye out for one more email from us - it'll have all your shipping and tracking details.</P>
+
+
+        <!-- Use the dynamic link generated in your Python code -->
+
+
+        <p>Any questions? <a href="mailto:hello@hasten.shop">Contact our team</a>.</p>
+
+        <p>Best regards,<br>HAS10 Team</p>
     </div>
 </body>
 </html>

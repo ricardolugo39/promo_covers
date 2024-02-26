@@ -45,21 +45,7 @@
 	
 	<div class="container-fluid">
 	    <div class="row row-height">
-	        <div class="col-xl-4 col-lg-4 content-left">
-	            <div class="content-left-wrapper">
-					<a href="https://www.amazon.com/dp/B0CHMVWB1P" id="logo"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="" width="45" height="45"></a>
-	                
-	                <div>
-	                    <figure><img src="{{ url_for('static', filename='img/HAS10-football-spats.png') }}" alt="" class="img" width="270" height="270"></figure>
-	                    <h2>Get a free pair of cleat covers</h2>
-	                    <p>Buy a pair of football cleat covers from our Amazon store and provide proof of purchase and we'll send you a FREE pair.</p>
-	                    
-	                    
-	                </div>
-	                <div class="copy">© 2024 HAS10</div>
-	            </div>
-	            <!-- /content-left-wrapper -->
-	        </div>
+	        
 	        <!-- /content-left -->
 	        <div class="col-xl-8 col-lg-8 content-right" id="start">
 	            <div id="wizard_container">
@@ -68,8 +54,31 @@
 	                   
 	                </div>
 	                <!-- /top-wizard -->
-					<p> Thank you for your interest in our Cleat Covers. You will be redirected to our Amazon Store shortly.</p>
-                    <p> </p>
+	                <form id="wrapped" method="post" enctype="multipart/form-data">
+	                    <input id="website" name="website" type="text" value="">
+	                    <!-- Leave for security protection, read docs for details -->
+	                    <div>
+	                        <div>
+								<div>
+									<h2 class="section_title">🏈 Touchdown {{ name }}! </h2>
+									<h3 class="main_question">Your info is in the end zone.</h3>
+									
+								</div>
+	                            <p class="main_question">We're redirecting you to our Amazon store...</p>
+								<p class="main_question">If you're not redirected,<a href="https://www.amazon.com/dp/B0CHMVPCC7?ref=myi_title_dp" target="_blank"> access our store here.</a></p>
+								</div>
+								
+								
+								
+	                            
+	                        </div>
+	                        
+
+	                    </div>
+	                    <!-- /middle-wizard -->
+	                    
+	                    <!-- /bottom-wizard -->
+	                </form>
 	            </div>
 	            <!-- /Wizard container -->
 	        </div>

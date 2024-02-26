@@ -24,7 +24,7 @@
 
         .celebration-line, .smaller-line {
             height: 2px; /* Thinner lines */
-            background-color: #ffa500; /* Orange color */
+            background-color: #000000; /* Orange color */
             margin-bottom: 10px;
         }
 
@@ -33,21 +33,26 @@
             font-weight: 800; /* Increased font weight for thickness */
             font-size: 28px; /* Increased font size */
             margin-bottom: 10px;
+            text-align: left;
+            margin-left: 50px;
         }
 
         h2 {
             color: #333;
             font-size: 20px;
             margin-bottom: 10px;
+            text-align: left;
+            margin-left:50px;
         }
 
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
+            padding: 10px 80px;
+            background-color: #000000;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
+            margin-top: 40px;
         }
 
         .smaller-line {
@@ -61,6 +66,13 @@
             margin-bottom: 10px;
             margin-left: 50px; /* Adjusted margin to the left */
             margin-right: 50px;
+        }
+        ul {
+            text-align: left; /* Align paragraphs to the left */
+            margin-bottom: 10px;
+            margin-left: 50px; /* Adjusted margin to the left */
+            margin-right: 50px;
+            line-height: 24px;
         }
          /* Grey list box styling */
          .list-box {
@@ -92,25 +104,31 @@
 </head>
 <body>
     <div class="container">
-        <div class="celebration-line"></div>
         <h1>HAS10</h1>
+        <div class="celebration-line"></div>
         
-        <h2>Interest Customer</h2>
-        <div class="smaller-line"></div>
+    
         <p>Hey {name},</p>
 
-        <p>Thank you for expressing interest in our Cleat Covers! We're thrilled to share the good news – you're now eligible for a FREE pair.</p>
+        <p>If you've snagged a pair of our cleat covers from our <a href="https://a.co/d/hZ08Ohb">Amazon Store</a>, now it's time for the extra point – your free cleat covers!</p>
     
         <!-- Check if the customer has already made a purchase -->
-        <p>If you've already purchased your Cleat Covers, you can access our confirmation page by clicking the button below. If not, you can get your pair by simply clicking <a href="https://www.amazon.com/dp/B0CHMVWB1P" target="_blank" style="text-decoration: none; color: #007BFF;">this link</a>.</p>
+        <h2>Here’s the play-by-play:</h2>
+        <ul>
+            <li><strong>Click the link below.</strong> </li>
+            <li><strong>Enter your Amazon order #</strong> </li>
+            <li><strong>Select your color and size</strong> </li>
+            <li><strong>Submit and you’re set!</strong> </li>
+          </ul>
+           
 
     
         <!-- Use the dynamic link generated in your Python code -->
-        <a href="http://3.145.176.33/free_pair" class="button">Confirm Purchase</a>
+        <a href="http://promo.has10.shop/free_pair" class="button">CLAIM YOUR FREE CLEAT COVERS</a>
     
-        <p>We appreciate your support, and if you have any questions or need assistance, feel free to reach out by replying to this email.</p>
+        <p>Any flags on the play? <a href="mailto:hello@hasten.shop">Contact our team</a>, we're ready for the huddle.</p>
 
-        <p>Best regards,<br>HAS10</p>
+        <p>Best regards,<br>HAS10 Team</p>
     </div>
 </body>
 </html>

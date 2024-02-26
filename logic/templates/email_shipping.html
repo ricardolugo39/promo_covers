@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shipping Confirmation for Your Cleat Covers</title>
+    <title>Your Free Cleat Covers Await! 🎉</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -24,7 +24,7 @@
 
         .celebration-line, .smaller-line {
             height: 2px; /* Thinner lines */
-            background-color: #ffa500; /* Orange color */
+            background-color: #000000; /* Orange color */
             margin-bottom: 10px;
         }
 
@@ -33,18 +33,22 @@
             font-weight: 800; /* Increased font weight for thickness */
             font-size: 28px; /* Increased font size */
             margin-bottom: 10px;
+            text-align: left;
+            margin-left: 50px;
         }
 
         h2 {
             color: #333;
             font-size: 20px;
             margin-bottom: 10px;
+            text-align: left;
+            margin-left:50px;
         }
 
         .button {
             display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
+            padding: 10px 80px;
+            background-color: #000000;
             color: #fff;
             text-decoration: none;
             border-radius: 5px;
@@ -61,6 +65,13 @@
             margin-bottom: 10px;
             margin-left: 50px; /* Adjusted margin to the left */
             margin-right: 50px;
+        }
+        ul {
+            text-align: left; /* Align paragraphs to the left */
+            margin-bottom: 10px;
+            margin-left: 50px; /* Adjusted margin to the left */
+            margin-right: 50px;
+            line-height: 24px;
         }
          /* Grey list box styling */
          .list-box {
@@ -92,26 +103,32 @@
 </head>
 <body>
     <div class="container">
-        <div class="celebration-line"></div>
         <h1>HAS10</h1>
+        <div class="celebration-line"></div>
         
-        <h2>Interest Customer</h2>
-        <div class="smaller-line"></div>
-        <p>Hey {name},</p>
-
-        <p>We're excited to let you know that your Cleat Covers are on their way and we wanted to provide you with the shipping details:</p>
     
-        <!-- Display shipping details -->
-        <p><strong>Order Shipped:</strong> {}</p>
-        <p><strong>Tracking Number:</strong> {tracking}</p>
 
-        <p>You can track your package's journey using the provided tracking number. If you have any questions or concerns regarding your order, feel free to reach out to our customer support team by replying to this email.</p>
+    
+        <!-- Check if the customer has already made a purchase -->
+        <h2>Your free pair of football cleats covers are on the way!</h2>
 
-        <!-- Add a thank you message -->
-        <p>Thank you for choosing our Cleat Covers. We hope you enjoy your purchase!</p>
+        <ul>
+            <li><strong>Size:</strong> {size}</li>
+            <li><strong>Color:</strong> {color}</li>
+            <li><strong>Ship to:</strong> {ship_to} </li>
+            <li><strong>Shipping address:</strong> {shipping_address}</li>
+            <li><strong>Carrier:</strong> USPS</li>
+            <li><strong>Tracking number:</strong> <a href="https://tools.usps.com/go/TrackConfirmAction_input?qtc_tLabels1={tracking_number}" target="_blank">{tracking_number}</a></li>
+        </ul>
+            <P>Thank you for teaming up with us. We can't wait to see you triumph in your new cleat covers!</P>
 
+    
+        <!-- Use the dynamic link generated in your Python code -->
         
-        <p>Best regards,<br>HAS10</p>
+    
+        <p>Any questions? <a href="mailto:hello@has10.shop.com">Contact our team</a>.</p>
+
+        <p>Best regards,<br>HAS10 Team</p>
     </div>
 </body>
 </html>

@@ -12,7 +12,7 @@ SENDER_EMAIL = 'hello@hasten.shop'
 RECIPIENT_EMAIL = 'hastensports@outlook.com'
 
 def send_interest_email(name, email):
-    subject = 'Has10 Cleat Internal interest email'
+    
     body = f"Name: {name}\nEmail: {email}"
 
     # Get the path to the 'email_confirmation.html' file in the 'templates' folder
@@ -30,10 +30,9 @@ def send_interest_email(name, email):
     # Include the link in the email content
     # html_content = html_content.replace('{new_form_link}', new_form_link)
 
-    # Include the link in the email content
 
     # Create the user's email message
-    user_subject = 'Customer HAS10 interest email'
+    user_subject = 'Your Free Cleat Covers Await! 🎉'
     user_message = MIMEMultipart()
     user_message['From'] = SENDER_EMAIL
     user_message['To'] = email
@@ -105,7 +104,7 @@ def send_confirmation_email(name, email, order, color, size, adress, state, city
 # Example usage:
 # send_confirmation_email('John Doe', 'ricardolugo39@me.com', 'Cleat', 'Red', '10')
         
-def send_shipping_email(email, order, tracking):
+def send_shipping_email(customer_info, order, tracking):
     subject = 'Shipping Confirmation'
     body = f"nShipping info for,\n\n\n\nOrder Details:\nOrder: {order}\Tracking: {tracking}"
 
@@ -117,14 +116,21 @@ def send_shipping_email(email, order, tracking):
 
     # Replace placeholders in the HTML content with actual values
     # html_content = html_content.replace('{name}', name)
-    html_content = html_content.replace('{email}', email)
+    html_content = html_content.replace('{email}', customer_info[7])
     html_content = html_content.replace('{order}', order)
     html_content = html_content.replace('{tracking}', tracking)
+    html_content = html_content.replace('{size}', customer_info[0])
+    html_content = html_content.replace('{color}', customer_info[1])
+    html_content = html_content.replace('{ship_to}', customer_info[2])
+    html_content = html_content.replace('{shipping_address}', f"{customer_info[3]}, {customer_info[4]}, {customer_info[5]}, {customer_info[6]}")
+    html_content = html_content.replace('{carrier}', 'USPS')
+    html_content = html_content.replace('{tracking_number}', tracking)
+
 
     # Create customer email message
     message = MIMEMultipart()
     message['From'] = SENDER_EMAIL
-    message['To'] = email
+    message['To'] = customer_info[7]
     message['Subject'] = subject
     message.attach(MIMEText(html_content, 'html'))
     
@@ -140,7 +146,7 @@ def send_shipping_email(email, order, tracking):
     with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
         server.starttls()
         server.login(SMTP_USERNAME, SMTP_PASSWORD)
-        server.sendmail(SENDER_EMAIL, email, message.as_string())
+        server.sendmail(SENDER_EMAIL, customer_info[7], message.as_string())
         server.sendmail(SENDER_EMAIL,RECIPIENT_EMAIL,recipient_message.as_string())
 
 # Example usage:

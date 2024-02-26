@@ -24,13 +24,7 @@ def landing_page():
 
         # Render a temporary page with a message
         message = "Thank you for your interest in our Cleat Covers. You will be redirected to our Amazon Store shortly."
-        return render_template('temp_page.html', message=message)
-
-        
-        
-        # Redirect to the Amazon link after form submission
-        #amazon_link = 'https://www.amazon.com/dp/B0CHMVWB1P'
-        #return redirect(amazon_link)
+        return render_template('temp_page.html', message=message, name=name)
 
 
     # Render the HTML index template
@@ -41,6 +35,7 @@ temp_bp = Blueprint('temp_page', __name__)
 
 @temp_bp.route('/temporary_page')
 def temporary_page():
+    name = request.args.get('name', '')
     return render_template('temp_page.html')
 
 
