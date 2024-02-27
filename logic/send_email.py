@@ -53,14 +53,14 @@ def send_interest_email(name, email):
         server.starttls()
         server.login(SMTP_USERNAME, SMTP_PASSWORD)
         server.sendmail(SENDER_EMAIL, email, user_message.as_string())
-        server.sendmail(SENDER_EMAIL, RECIPIENT_EMAIL, recipient_message.as_string())
+        # server.sendmail(SENDER_EMAIL, RECIPIENT_EMAIL, recipient_message.as_string())
 
 # Call the function with sample data for testing
 #send_interest_email('John Doe', 'ricardolugo39@me.com')
         
 def send_confirmation_email(name, email, order, color, size, adress, state, city, zip):
     subject = 'Has10 Cleat Order Confirmation'
-    body = f"new customer order from {name},\n\n\n\nOrder Details:\nOrder: {order}\nColor: {color}\nSize: {size}"
+    body = f"New customer order from {name},\n\n\n\nOrder Details:\nOrder: {order}\nColor: {color}\nSize: {size}\n\nCustomer Information:\nEmail: {email}\nAddress: {adress}\nCity: {city}\nState: {state}\nZIP: {zip}"
 
     # Get the path to the 'email_confirmation.html' file in the 'templates' folder
     template_path = os.path.join(os.path.dirname(__file__), 'templates', 'email_confirmation.html')
@@ -106,7 +106,7 @@ def send_confirmation_email(name, email, order, color, size, adress, state, city
         
 def send_shipping_email(customer_info, order, tracking):
     subject = 'Shipping Confirmation'
-    body = f"nShipping info for,\n\n\n\nOrder Details:\nOrder: {order}\Tracking: {tracking}"
+    body = f"Shippinng confirmation,\n\n\n\nOrder Details:\nOrder: {order}\nColor: {customer_info[1]}\nSize: {customer_info[0]}\n\nCustomer Information:\nEmail: {customer_info[7]}\nAddress: {customer_info[3]}\nCity: {customer_info[4]}\nState: {customer_info[5]}\nZIP: {customer_info[6]}"
 
     # Get the path to the 'email_confirmation.html' file in the 'templates' folder
     template_path = os.path.join(os.path.dirname(__file__), 'templates', 'email_shipping.html')
@@ -132,7 +132,9 @@ def send_shipping_email(customer_info, order, tracking):
     message['From'] = SENDER_EMAIL
     message['To'] = customer_info[7]
     message['Subject'] = subject
+    message['Bcc'] = RECIPIENT_EMAIL
     message.attach(MIMEText(html_content, 'html'))
+    
     
     # internal email
     recipient_subject = 'Shipping Internal'
