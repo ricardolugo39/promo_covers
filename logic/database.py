@@ -3,6 +3,7 @@ import os
 
 DATABASE_PATH = 'single_database.db'
 
+
 def init_database():
     conn = sqlite3.connect(DATABASE_PATH)
     cursor = conn.cursor()
@@ -15,15 +16,15 @@ def init_database():
     order_data_table_exists = cursor.fetchone()
 
     # Create the 'user_data' table if it doesn't exist
-    if not user_data_table_exists:
-        cursor.execute('''
-            CREATE TABLE IF NOT EXISTS user_data (
-                id INTEGER PRIMARY KEY,
-                name TEXT NOT NULL,
-                email TEXT NOT NULL,
-                timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
-            )
-        ''')
+    cursor.execute('''
+        CREATE TABLE IF NOT EXISTS user_data (
+            id INTEGER PRIMARY KEY,
+            name TEXT NOT NULL,
+            email TEXT NOT NULL,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+        )
+    ''')
+
     # Create the 'order_data' table if it doesn't exist
     if not order_data_table_exists:
         cursor.execute('''
